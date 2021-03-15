@@ -27,9 +27,9 @@ struct Home: View {
                 .scaleEffect(showProfile ? 0.95 : 1)
                 .animation(.default)
 
-            ContentView()
+            ContentView(isBlurBackground: true)
                 .frame(minWidth: 0, maxWidth: 712)
-                .background(BlurView(style: .systemMaterial))
+                .background(BlurView(blurStyle: .regular))
                 .cornerRadius(30)
                 .shadow(radius: 20)
                 .animation(.spring())
@@ -62,9 +62,9 @@ struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             // xcrun simctl list devicetypes
-            Home().previewDevice("iPhone SE (2nd generation)")
-            Home().previewDevice("iPhone 12 mini")
-            Home().previewDevice("iPhone XR")
+//            Home().previewDevice("iPhone SE (2nd generation)")
+//            Home().previewDevice("iPhone 12 mini")
+//            Home().previewDevice("iPhone XR")
             Home().previewDevice("iPhone 12")
             Home().previewDevice("iPad Pro (9.7-inch)")
 
@@ -135,7 +135,7 @@ struct MenuView: View {
             .padding(.top, 20)
             .padding(30)
             .frame(minWidth: 0, maxWidth: 360)
-            .background(Color("button"))
+            .background(BlurView(blurStyle: .regular))
             .cornerRadius(30)
             .padding(.trailing, 60)
             .shadow(radius: 20)

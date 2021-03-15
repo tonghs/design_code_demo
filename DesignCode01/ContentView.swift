@@ -10,11 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @State var show = false
     @State var viewState = CGSize.zero
+    @State var isBlurBackground = false
     
     var body: some View {
         ZStack {
 
-            BlurView(style: .systemMaterial)
+            // BlurView(blurStyle: .regular)
 
             TitleView()
                 .blur(radius: show ? 20 : 0)
@@ -25,7 +26,7 @@ struct ContentView: View {
                 .animation(.default)
 
             CardView()
-                .background(show ? Color.red : Color("background9"))
+                .background(show ? Color.red : Color("background10"))
                 .cornerRadius(10)
                 .shadow(radius: 20)
                 .offset(x: 0, y: show ? -400 : -5)
@@ -39,7 +40,7 @@ struct ContentView: View {
 
 
             CardView()
-                .background(show ? Color("background5") : Color("background8"))
+                .background(show ? Color.blue : Color("background8"))
                 .cornerRadius(10)
                 .shadow(radius: 20)
                 .offset(x: 0, y: show ? -200 : 15)
@@ -74,14 +75,9 @@ struct ContentView: View {
                         }
                 )
         }
-        .background(Color("background"))
+        .background(self.isBlurBackground ? nil : Color("background"))
+        .background(self.isBlurBackground ? BlurView(blurStyle: .regular) : nil)
         .ignoresSafeArea(.all)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
 
@@ -163,9 +159,16 @@ struct CardBottomView: View {
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding()
         .padding(.horizontal)
-        .background(BlurView(style: .systemMaterial))
+        .background(BlurView(blurStyle: .systemMaterial))
         .cornerRadius(30)
         .shadow(radius: 20)
         .offset(y: UIScreen.main.bounds.height - 240)
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

@@ -49,9 +49,9 @@ struct TabBar_Previews: PreviewProvider {
             
             Group {
                 // xcrun simctl list devicetypes
-                TabBar().previewDevice("iPhone SE (2nd generation)")
-                TabBar().previewDevice("iPhone 12 mini")
-                TabBar().previewDevice("iPhone XR")
+//                TabBar().previewDevice("iPhone SE (2nd generation)")
+//                TabBar().previewDevice("iPhone 12 mini")
+//                TabBar().previewDevice("iPhone XR")
                 TabBar().previewDevice("iPhone 12")
                 TabBar().previewDevice("iPad Pro (9.7-inch)")
 

@@ -113,17 +113,17 @@
 		B1070FC225FDD8DC003DA4C6 /* DesignCode01 */ = {
 			isa = PBXGroup;
 			children = (
-				B1070FC325FDD8DC003DA4C6 /* DesignCode01App.swift */,
+				B1D2566525FE1FDA0055586B /* BlurView.swift */,
+				B17C4CCF25FE6FA800AAE62B /* CertificateRow.swift */,
 				B1070FC525FDD8DC003DA4C6 /* ContentView.swift */,
+				B1070FC325FDD8DC003DA4C6 /* DesignCode01App.swift */,
 				B1D2565B25FDF7DA0055586B /* Home.swift */,
+				B1D2566025FE09900055586B /* HomeList.swift */,
+				B17C4CCA25FE637500AAE62B /* Settings.swift */,
 				B17C4CC525FE4E2200AAE62B /* TabBar.swift */,
+				B17C4CB725FE334600AAE62B /* UpdateDetail.swift */,
 				B1D2566B25FE29960055586B /* UpdateList.swift */,
 				B17C4CBC25FE38DA00AAE62B /* UpdateStore.swift */,
-				B17C4CB725FE334600AAE62B /* UpdateDetail.swift */,
-				B1D2566025FE09900055586B /* HomeList.swift */,
-				B17C4CCF25FE6FA800AAE62B /* CertificateRow.swift */,
-				B17C4CCA25FE637500AAE62B /* Settings.swift */,
-				B1D2566525FE1FDA0055586B /* BlurView.swift */,
 				B1070FC725FDD8DF003DA4C6 /* Assets.xcassets */,
 				B1070FCC25FDD8DF003DA4C6 /* Info.plist */,
 				B1070FC925FDD8DF003DA4C6 /* Preview Content */,
