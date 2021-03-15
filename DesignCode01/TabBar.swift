@@ -46,11 +46,22 @@ struct TabBar: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TabBar()
-                .environment(\.colorScheme, .dark)
+            
+            Group {
+                // xcrun simctl list devicetypes
+                TabBar().previewDevice("iPhone SE (2nd generation)")
+                TabBar().previewDevice("iPhone 12 mini")
+                TabBar().previewDevice("iPhone XR")
+                TabBar().previewDevice("iPhone 12")
+                TabBar().previewDevice("iPad Pro (9.7-inch)")
 
-            TabBar()
-                .environment(\.sizeCategory, .extraLarge)
+            }
+            
+//            TabBar()
+//                .environment(\.colorScheme, .dark)
+//
+//            TabBar()
+//                .environment(\.sizeCategory, .extraLarge)
         }
         
     }

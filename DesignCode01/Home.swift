@@ -38,11 +38,11 @@ struct Home: View {
             VStack {
                 HStack {
                     MenuButton(show: self.$show)
-                        .offset(x: -35, y: showProfile ? statusBarHeight : 80)
+                        .offset(x: -35, y: showProfile ? statusBarHeight : 78)
                         .animation(.spring())
                     
                     MenuRight(showProfile: self.$showProfile, showUpdates: self.$showUpdates)
-                        .offset(x: -16, y: showProfile ? statusBarHeight : 88)
+                        .offset(x: -16, y: showProfile ? statusBarHeight : 78)
                         .animation(.spring())
                 }
                 Spacer()
@@ -61,8 +61,11 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            Home().previewDevice("iPhone SE")
-            Home().previewDevice("iPhone Xr")
+            // xcrun simctl list devicetypes
+            Home().previewDevice("iPhone SE (2nd generation)")
+            Home().previewDevice("iPhone 12 mini")
+            Home().previewDevice("iPhone XR")
+            Home().previewDevice("iPhone 12")
             Home().previewDevice("iPad Pro (9.7-inch)")
 
         }

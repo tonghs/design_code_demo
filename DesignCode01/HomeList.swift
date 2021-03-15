@@ -12,7 +12,7 @@ struct HomeList: View {
     var courses = coursesData
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
@@ -62,6 +62,7 @@ struct HomeList: View {
                 CertificateRow()
             }
             .padding(.top, 78.0)
+            .padding(.bottom, 90.0)
         }
         
     }

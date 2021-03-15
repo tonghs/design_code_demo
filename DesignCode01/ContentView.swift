@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     @State var show = false
     @State var viewState = CGSize.zero
@@ -15,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
 
-            BlurView(style: .regular)
+            BlurView(style: .systemMaterial)
 
             TitleView()
                 .blur(radius: show ? 20 : 0)
@@ -29,7 +28,7 @@ struct ContentView: View {
                 .background(show ? Color.red : Color("background9"))
                 .cornerRadius(10)
                 .shadow(radius: 20)
-                .offset(x: 0, y: show ? -400 : -20)
+                .offset(x: 0, y: show ? -400 : -5)
                 .scaleEffect(0.85)
                 .rotationEffect(Angle(degrees: show ? 15 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: /*@START_MENU_TOKEN@*/(x: 10.0, y: 10.0, z: 10.0)/*@END_MENU_TOKEN@*/)
@@ -43,7 +42,7 @@ struct ContentView: View {
                 .background(show ? Color("background5") : Color("background8"))
                 .cornerRadius(10)
                 .shadow(radius: 20)
-                .offset(x: 0, y: show ? -200 : 0)
+                .offset(x: 0, y: show ? -200 : 15)
                 .scaleEffect(0.9)
                 .rotationEffect(Angle(degrees: show ? 10 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 40: 0), axis: (x: 10.0, y: 10.0, z: 10.0))
@@ -54,7 +53,7 @@ struct ContentView: View {
 
 
             CertificateView()
-                .offset(x: 0, y: show ? 0 : 20)
+                .offset(x: 0, y: show ? 0 : 35)
                 .scaleEffect(0.95)
                 .rotationEffect(Angle(degrees: show ? 5 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 30 : 0), axis: /*@START_MENU_TOKEN@*/(x: 10.0, y: 10.0, z: 10.0)/*@END_MENU_TOKEN@*/)
@@ -75,6 +74,8 @@ struct ContentView: View {
                         }
                 )
         }
+        .background(Color("background"))
+        .ignoresSafeArea(.all)
     }
 }
 
@@ -95,7 +96,7 @@ struct CardView: View {
 }
 
 struct CertificateView: View {
-    var item = Certificate(title: "UI Design", image: "Background", width: 300, height: 220)
+    var item = Certificate(title: "UI Design", image: "Background", width: 300, height: 200)
     
     var body: some View {
         VStack {
@@ -135,9 +136,10 @@ struct TitleView: View {
                 Text("Certificates")
                     .font(.largeTitle)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(.top, statusBarHeight)
                 Spacer()
                 
-            }
+            }.padding(.bottom, 30)
             Image("Illustration5")
             Spacer()
         }
@@ -164,6 +166,6 @@ struct CardBottomView: View {
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(30)
         .shadow(radius: 20)
-        .offset(y: UIScreen.main.bounds.height - 170)
+        .offset(y: UIScreen.main.bounds.height - 240)
     }
 }
