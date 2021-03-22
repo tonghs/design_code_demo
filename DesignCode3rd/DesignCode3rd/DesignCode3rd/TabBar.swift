@@ -25,6 +25,11 @@ struct TabBar: View {
                     Image(systemName: "rectangle.stack.fill")
                     Text("Certificates")
                 }
+            Buttons()
+                .tabItem {
+                    Image(systemName: "hand.tap.fill")
+                    Text("Certificates")
+                }
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }

@@ -11,7 +11,7 @@ import SwiftUI
 struct DesignCode3rdApp: App {
     var body: some Scene {
         WindowGroup {
-            TabBar()
+            LoginView()
         }
     }
 }
