@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Contentful",
+        "repositoryURL": "https://gitee.com/doubleZ0108/contentful.swift",
+        "state": {
+          "branch": null,
+          "revision": "7017c7c8da6f035a9e8c60c85158d5b7808b79da",
+          "version": "5.0.7"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "a6b6e44eadf0d39250c10a7cc0e3b91d0bdb0e94",
+          "version": "5.10.4"
+        }
+      },
+      {
+        "package": "SDWebImageSwiftUI",
+        "repositoryURL": "https://gitee.com/pinta/SDWebImageSwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "4c7f169e39bc35d6b80d42b8eb8301bee9cd0907",
+          "version": "1.5.0"
+        }
+      },
+      {
+        "package": "URLImage",
+        "repositoryURL": "https://gitee.com/tonghs/url-image",
+        "state": {
+          "branch": null,
+          "revision": "c1a906515b0a440927b96204b778058871b22f23",
+          "version": "2.2.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
