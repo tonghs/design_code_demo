@@ -35,7 +35,6 @@ class CourseStore: ObservableObject {
         
         getArray(id: "course") { items in
             items.forEach { item in
-                print(item.fields.linkedAsset(at: "image")?.url ?? URL(string: "")!)
                 self.courses.append(Course(
                                         title: item.fields["title"] as! String,
                                         subtitle: item.fields["subtitle"] as! String,

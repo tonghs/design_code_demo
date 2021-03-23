@@ -48,6 +48,7 @@
 		B1B824C92608F3800020275C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B824C82608F3800020275C /* LoadingView.swift */; };
 		B1B824CC2608F5320020275C /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B824CB2608F5310020275C /* SuccessView.swift */; };
 		B1B824CF260A1BDF0020275C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B824CE260A1BDE0020275C /* GoogleService-Info.plist */; };
+		B1B82501260A27F50020275C /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B82500260A27F40020275C /* UserStore.swift */; };
 		B1F0E521260615FF007BD93D /* DesignCode3rdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F0E520260615FF007BD93D /* DesignCode3rdApp.swift */; };
 		B1F0E523260615FF007BD93D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F0E522260615FF007BD93D /* ContentView.swift */; };
 		B1F0E52526061600007BD93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F0E52426061600007BD93D /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		B1B824C82608F3800020275C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1B824CB2608F5310020275C /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		B1B824CE260A1BDE0020275C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1B82500260A27F40020275C /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		B1F0E51D260615FF007BD93D /* DesignCode3rd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode3rd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F0E520260615FF007BD93D /* DesignCode3rdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCode3rdApp.swift; sourceTree = "<group>"; };
 		B1F0E522260615FF007BD93D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				B1F0E539260653E2007BD93D /* UpdateList.swift */,
 				B1F0E53F26065B8F007BD93D /* UpdateStore.swift */,
 				B1F0E53C260657C8007BD93D /* UpdateDetail.swift */,
+				B1B82500260A27F40020275C /* UserStore.swift */,
 				B1F0E52426061600007BD93D /* Assets.xcassets */,
 				B1423D672606F94E000C4E73 /* Work_Sans */,
 				B1B824BB2608F0E90020275C /* Lottie */,
@@ -415,6 +418,7 @@
 				B1B824C92608F3800020275C /* LoadingView.swift in Sources */,
 				B1F0E54A2606F54A007BD93D /* Modifiers.swift in Sources */,
 				B1F0E54326065F91007BD93D /* TabBar.swift in Sources */,
+				B1B82501260A27F50020275C /* UserStore.swift in Sources */,
 				B1B824AB260770A80020275C /* BlurView.swift in Sources */,
 				B1F0E53D260657C8007BD93D /* UpdateDetail.swift in Sources */,
 				B1423D97260711A4000C4E73 /* CourseList.swift in Sources */,

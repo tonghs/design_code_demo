@@ -40,6 +40,7 @@ struct TabBar_Previews: PreviewProvider {
         Group {
 //            TabBar().previewDevice("iPhone 8")
             TabBar().previewDevice("iPhone 12")
+                .environmentObject(UserStore())
         }
     }
 }
