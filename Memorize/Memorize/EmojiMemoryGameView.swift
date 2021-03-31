@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Memorize
 //
 //  Created by 仝华帅 on 2021/3/31.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var viewModel: EmojiMemoryGame
+struct EmojiMemoryGameView: View {
+    @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
         HStack() {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
+                    self.viewModel.choose(card: card)
                 }
             }
         }
@@ -68,6 +68,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
