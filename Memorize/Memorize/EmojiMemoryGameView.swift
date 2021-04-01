@@ -32,34 +32,32 @@ struct CardView: View {
         }
     }
     
-    func body(for size: CGSize) -> some View {
-        ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill()
-                    .foregroundColor(.white)
-
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(lineWidth: edgeLineWidth)
-                Text(card.content)
+    @ViewBuilder
+    private func body(for size: CGSize) -> some View {
+        if card .isFaceUp || !card.isMatched {
+            ZStack {
+                Pie(startAngel: Angle.degrees(0-90), endAngel: Angle.degrees(110-90), clockWise: true)
+                    .padding(5)
+                    .opacity(0.4)
                 
-            } else {
-                if !card.isMatched {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .fill()
-                }
+                Text(card.content)
+                    .font(.system(size: self.fontSize(for: size)))
             }
+    //        .modifier(Cardify(isFaceUp: card.isFaceUp))
+            .cardify(isFaceUp: card.isFaceUp)
         }
-        .font(.system(size: self.fontSize(for: size)))
     }
     
     // MARK: - Drawing Contants
     
-    let cornerRadius: CGFloat = 10
-    let edgeLineWidth: CGFloat = 3
-    
-    func fontSize(for size: CGSize) -> CGFloat {
-        return min(size.width, size.height) * 0.75
+    private func fontSize(for size: CGSize) -> CGFloat {
+        return min(size.width, size.height) * 0.7
+    }
+}
+
+extension View {
+    func cardify (isFaceUp: Bool) -> some View {
+        self.modifier(Cardify(isFaceUp: isFaceUp))
     }
 }
 
@@ -84,6 +82,9 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
+        let game = EmojiMemoryGame()
+        game.choose(card: game.cards[0])
+        
+        return EmojiMemoryGameView(viewModel: game)
     }
 }
