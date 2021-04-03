@@ -44,6 +44,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             self.cards.append(Card(content: content, id: pairIndex * 2))
             self.cards.append(Card(content: content, id: pairIndex * 2 + 1))
         }
+        
+        cards.shuffle()
     }
     
     struct Card: Identifiable {
