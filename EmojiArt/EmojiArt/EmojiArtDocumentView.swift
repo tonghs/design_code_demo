@@ -11,6 +11,7 @@ struct EmojiArtDocumentView: View {
     @ObservedObject var document: EmojiArtDocument
     @State private var steadyStateZoomScale: CGFloat = 1.0
     @GestureState private var gestureZoomScale: CGFloat =  1.0
+    @State private var chosenPalette: String = ""
     
     private var zoomScale: CGFloat {
         steadyStateZoomScale * gestureZoomScale
@@ -19,16 +20,20 @@ struct EmojiArtDocumentView: View {
     
     var body: some View {
         VStack {
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(EmojiArtDocument.palette.map {String($0)}, id: \.self) { emoji in
-                        Text(emoji)
-                            .font(Font.system(size: defaultEmojiSize))
-                            .onDrag { return NSItemProvider(object: emoji as NSString) }
+            HStack {
+                PaletteChooser(document: self.document, chosenPalette: self.$chosenPalette)
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(self.chosenPalette.map {String($0)}, id: \.self) { emoji in
+                            Text(emoji)
+                                .font(Font.system(size: defaultEmojiSize))
+                                .onDrag { return NSItemProvider(object: emoji as NSString) }
+                        }
                     }
                 }
-            }
-            .padding(.horizontal)
+                .onAppear {
+                    self.chosenPalette = self.document.defaultPalette
+                }            }
             
             GeometryReader { geometry in
                 ZStack {
@@ -52,6 +57,9 @@ struct EmojiArtDocumentView: View {
                 .clipped()
                 .gesture(self.zoomGesture())
                 .edgesIgnoringSafeArea([.horizontal, .bottom])
+                .onReceive(self.document.$backgroundImage) { image in
+                    self.zoomToFit(image, in: geometry.size)
+                }
                 .onDrop(of: ["public.image", "public.text"], isTargeted: nil) { providers, location in
                     var location = geometry.convert(location, from: .global)
                     location = CGPoint(x: location.x - geometry.size.width / 2, y: location.y - geometry.size.height / 2)
