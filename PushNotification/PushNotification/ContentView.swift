@@ -62,8 +62,8 @@ struct ContentView: View {
 // foreground 显示通知
 extension AppDelegate: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        completionHandler([.banner, .sound, .badge])
+//        UIApplication.shared.applicationIconBadgeNumber = 0
+        completionHandler([.banner, .sound])
     }
 }
 
