@@ -23,6 +23,8 @@
 		B1607B8126357D3500142FCB /* HeroConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B7F26357D3500142FCB /* HeroConfiguration.swift */; };
 		B1607B8326357FC500142FCB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B8226357FC500142FCB /* Animations.swift */; };
 		B1607B8426357FC500142FCB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B8226357FC500142FCB /* Animations.swift */; };
+		B175931926368AC200DC3771 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B175931826368AC200DC3771 /* SwiftUIView.swift */; };
+		B175931A26368AC200DC3771 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B175931826368AC200DC3771 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		B1607B7C26357D1A00142FCB /* EnvironmentValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		B1607B7F26357D3500142FCB /* HeroConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroConfiguration.swift; sourceTree = "<group>"; };
 		B1607B8226357FC500142FCB /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		B175931826368AC200DC3771 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				B1607B3D2635690000142FCB /* ContentView.swift */,
 				B1607B7926357CFF00142FCB /* Transitions.swift */,
 				B1607B3E2635690400142FCB /* Assets.xcassets */,
+				B175931826368AC200DC3771 /* SwiftUIView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -325,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1607B7A26357CFF00142FCB /* Transitions.swift in Sources */,
+				B175931926368AC200DC3771 /* SwiftUIView.swift in Sources */,
 				B1607B672635690400142FCB /* ContentView.swift in Sources */,
 				B1607B8326357FC500142FCB /* Animations.swift in Sources */,
 				B1607B8026357D3500142FCB /* HeroConfiguration.swift in Sources */,
@@ -338,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1607B7B26357CFF00142FCB /* Transitions.swift in Sources */,
+				B175931A26368AC200DC3771 /* SwiftUIView.swift in Sources */,
 				B1607B682635690400142FCB /* ContentView.swift in Sources */,
 				B1607B8426357FC500142FCB /* Animations.swift in Sources */,
 				B1607B8126357D3500142FCB /* HeroConfiguration.swift in Sources */,

@@ -7,47 +7,66 @@
 
 import SwiftUI
 
+//struct ContentView: View {
+//    @State var isShow = false
+//    @Namespace private var ns
+//
+//    var body: some View {
+//        VStack {
+//            if isShow {
+//                Circle()
+//                    .matchedGeometryEffect(id: "large1", in: ns)
+//                    .frame(width: 200, height: 200)
+//            } else {
+//                RoundedRectangle(cornerRadius: 25.0)
+//                    .matchedGeometryEffect(id: "large1", in: ns)
+//                    .frame(width: 100, height: 100)
+//            }
+//            Button("test") {
+//                withAnimation() {
+//                    self.isShow.toggle()
+//                }
+//            }
+//        }
+//    }
+//}
+
 struct ContentView: View {
-    @State var isShow = false
-    @Namespace private var ns
-    
+    @Namespace private var animation
+    @State private var isFlipped = false
+
     var body: some View {
         ZStack {
-            if !isShow {
-                Color.clear.overlay(
-                    SubView()
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 1)) {
-                                DispatchQueue.main.async {
-                                    withAnimation(.easeInOut(duration: 1)) {
-                                        self.isShow = true
-                                    }
-                                }
-                            }
-                        }
-                        .matchedGeometryEffect(id: "large1", in: ns, properties: .frame)
-                        .transition(.invisible)
-                        
-                )
-                .zIndex(1)
-            } else {
-                Color.clear.frame(width: 150, height: 128)
-                
-                Color.clear.overlay(
-                    SubView2()
-                        .onTapGesture {
-                            DispatchQueue.main.async {
-                                withAnimation(.easeInOut(duration: 1)) {
-                                    self.isShow = false
-                                }
-                            }
-                        }
-                        .matchedGeometryEffect(id: "large1", in: ns, properties: .position)
-                        .transition(.modal)
-
-                )
-                .zIndex(3)
-                
+            if isFlipped {
+                VStack {
+                    Image("drink")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .matchedGeometryEffect(id: "Shape", in: animation)
+                        .frame(width: 200, height: 200)
+                }
+//                .transition(.modal)
+            }
+            
+            if !isFlipped {
+                VStack {
+                    Spacer()
+                    Image("drink")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .matchedGeometryEffect(id: "Shape", in: animation)
+                        .frame(width: 100, height: 100)
+//                        .clipShape(Rectangle())
+                        .contentShape(Circle())
+//                            .animation(.easeIn)
+//                            .transition(.invisible)
+                }
+                .transition(.invisible)
+            }
+        }
+        .onTapGesture {
+            withAnimation(.easeInOut(duration: 1)) {
+                isFlipped.toggle()
             }
         }
     }
@@ -59,19 +78,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SubView: View {
-    var body: some View {
-        Image("icon")
-            .resizable()
-            .frame(width: 150, height: 128)
-    }
-}
-
-struct SubView2: View {
-    var body: some View {
-        Image("icon")
-            .resizable()
-            .frame(width: 300, height: 256)
-            .offset(y: -100)
-    }
-}

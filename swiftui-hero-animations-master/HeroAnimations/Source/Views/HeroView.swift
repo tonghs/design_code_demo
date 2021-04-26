@@ -49,7 +49,7 @@ struct HeroView: View {
                                 Thumbnail(item: item)
                                     .onTapGesture { tapThumbnail(item) }
                                     .matchedGeometryEffect(id: item.id, in: nspace, properties: .frame)
-                                    .transition(.invisible)
+//                                    .transition(.invisible)
                             } else {
                                 Color.clear.frame(width: config.thumbnailSize.width, height: config.thumbnailSize.height)
                             }
