@@ -31,43 +31,67 @@ import SwiftUI
 //    }
 //}
 
+struct User: Identifiable, Hashable {
+    var id: UUID
+    var name: String
+}
+
+class MyModel: ObservableObject {
+    @Published var users: [User] = []
+}
+
 struct ContentView: View {
-    @Namespace private var animation
-    @State private var isFlipped = false
+    @State private var isLoading = false
+    @State var li: [String] = []
+    @ObservedObject var viewModel = MyModel()
 
     var body: some View {
-        ZStack {
-            if isFlipped {
-                VStack {
-                    Image("drink")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .matchedGeometryEffect(id: "Shape", in: animation)
-                        .frame(width: 200, height: 200)
-                }
-//                .transition(.modal)
+        VStack {
+            
+            ForEach(self.viewModel.users) { item in
+                Text(item.name)
             }
             
-            if !isFlipped {
-                VStack {
-                    Spacer()
-                    Image("drink")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .matchedGeometryEffect(id: "Shape", in: animation)
-                        .frame(width: 100, height: 100)
-//                        .clipShape(Rectangle())
-                        .contentShape(Circle())
-//                            .animation(.easeIn)
-//                            .transition(.invisible)
+            Button(action: {
+                if self.viewModel.users.count == 0 {
+                    self.viewModel.users = [
+                        User(id: UUID(), name: "zhagnsan"),
+                        User(id: UUID(), name: "zhagnsan1"),
+                        User(id: UUID(), name: "zhagnsa2"),
+                    ]
+                } else {
+                    self.viewModel.users = [
+                        User(id: UUID(), name: "zhagnsan111"),
+                        User(id: UUID(), name: "zhagnsan1222"),
+                    ]
                 }
-                .transition(.invisible)
+                
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
+            
+            Button(action: {
+               self.viewModel.users = []
+                
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
+            
+            RefreshableScrollView(refreshing: self.$isLoading) {
+                VStack {
+                    ForEach(li, id: \.self) { item in
+                        Text(item)
+                    }
+                }
             }
-        }
-        .onTapGesture {
-            withAnimation(.easeInOut(duration: 1)) {
-                isFlipped.toggle()
-            }
+            .onChange(of: self.isLoading, perform: { value in
+                print(value, self.isLoading)
+                if value {
+                    print(self.$isLoading)
+                    self.li = ["this", "is", "a", "Test", "Text"]
+                    self.isLoading = false
+                }
+        })
         }
     }
 }

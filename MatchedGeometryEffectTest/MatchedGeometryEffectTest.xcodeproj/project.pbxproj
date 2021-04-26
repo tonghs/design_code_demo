@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10DACB32636CC8000D3CB15 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10DACB22636CC8000D3CB15 /* RefreshableScrollView.swift */; };
+		B10DACB42636CC8000D3CB15 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10DACB22636CC8000D3CB15 /* RefreshableScrollView.swift */; };
 		B1607B582635690400142FCB /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B572635690400142FCB /* Tests_iOS.swift */; };
 		B1607B632635690400142FCB /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B622635690400142FCB /* Tests_macOS.swift */; };
 		B1607B652635690400142FCB /* MatchedGeometryEffectTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1607B3C2635690000142FCB /* MatchedGeometryEffectTestApp.swift */; };
@@ -45,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B10DACB22636CC8000D3CB15 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		B1607B3C2635690000142FCB /* MatchedGeometryEffectTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectTestApp.swift; sourceTree = "<group>"; };
 		B1607B3D2635690000142FCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B1607B3E2635690400142FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 				B1607B7926357CFF00142FCB /* Transitions.swift */,
 				B1607B3E2635690400142FCB /* Assets.xcassets */,
 				B175931826368AC200DC3771 /* SwiftUIView.swift */,
+				B10DACB22636CC8000D3CB15 /* RefreshableScrollView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -331,6 +335,7 @@
 				B1607B7A26357CFF00142FCB /* Transitions.swift in Sources */,
 				B175931926368AC200DC3771 /* SwiftUIView.swift in Sources */,
 				B1607B672635690400142FCB /* ContentView.swift in Sources */,
+				B10DACB32636CC8000D3CB15 /* RefreshableScrollView.swift in Sources */,
 				B1607B8326357FC500142FCB /* Animations.swift in Sources */,
 				B1607B8026357D3500142FCB /* HeroConfiguration.swift in Sources */,
 				B1607B652635690400142FCB /* MatchedGeometryEffectTestApp.swift in Sources */,
@@ -345,6 +350,7 @@
 				B1607B7B26357CFF00142FCB /* Transitions.swift in Sources */,
 				B175931A26368AC200DC3771 /* SwiftUIView.swift in Sources */,
 				B1607B682635690400142FCB /* ContentView.swift in Sources */,
+				B10DACB42636CC8000D3CB15 /* RefreshableScrollView.swift in Sources */,
 				B1607B8426357FC500142FCB /* Animations.swift in Sources */,
 				B1607B8126357D3500142FCB /* HeroConfiguration.swift in Sources */,
 				B1607B662635690400142FCB /* MatchedGeometryEffectTestApp.swift in Sources */,
