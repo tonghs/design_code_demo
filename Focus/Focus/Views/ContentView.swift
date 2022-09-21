@@ -87,5 +87,6 @@ struct ContentView_Previews: PreviewProvider {
         
         ContentView()
             .environment(\.locale, .init(identifier: "en"))
+            .environment(\.colorScheme, .dark)
     }
 }
