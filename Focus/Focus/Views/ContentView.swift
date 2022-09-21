@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
+    var isLight: Bool {
+      colorScheme == .light
+    }
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor").ignoresSafeArea()
@@ -27,7 +32,8 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 
-                Image("StartScreenMain")
+                
+                Image(isLight ? "StartScreenMain" : "StartScreenMainDark")
                     .resizable()
                     .frame(width: 192, height: 174)
                     .padding(.top, 100)
@@ -36,6 +42,7 @@ struct ContentView: View {
                     Text("Get things Done with")
                         .padding(/*@START_MENU_TOKEN@*/.top, 85.0/*@END_MENU_TOKEN@*/)
                         .font(.headline)
+                    
                     Text(" Focus")
                         .padding(/*@START_MENU_TOKEN@*/.top, 85.0/*@END_MENU_TOKEN@*/)
                         .font(.headline)
