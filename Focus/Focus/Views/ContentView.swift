@@ -83,10 +83,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environment(\.locale, .init(identifier: "zh-Hans"))
+            .environment(\.locale, .init(identifier: "en"))
         
         ContentView()
-            .environment(\.locale, .init(identifier: "en"))
+            .environment(\.locale, .init(identifier: "zh-Hans"))
             .environment(\.colorScheme, .dark)
     }
 }
